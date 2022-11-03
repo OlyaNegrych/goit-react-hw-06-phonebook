@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 import Notiflix from 'notiflix';
+import {getContacts} from '../../redux/selectors'
 import { addContact } from 'redux/contactsSlice';
 import { Label, Input, AddBtn } from '../ContactForm/ContactForm.styled';
 
@@ -18,7 +19,7 @@ const initialValues = {
 
 const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.contacts);
+  const contacts = useSelector(getContacts);
 
   const handleSubmit = ({ name, number }, { resetForm }) => {
         
