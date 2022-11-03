@@ -6,10 +6,6 @@ import Section from '../Section/Section';
 
 const App = () => {
 
-  // useEffect(() => {
-  //   localStorage.setItem('contacts', JSON.stringify(contacts));
-  // }, [contacts]);
-
     return (
       <>
         <Section title="Phonebook">
@@ -17,7 +13,6 @@ const App = () => {
         </Section>
 
         <Section title="Contacts">
-          {' '}
           <Filter />
           <ContactList />
         </Section>

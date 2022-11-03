@@ -2,7 +2,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
-import { Notiflix } from 'notiflix';
+import Notiflix from 'notiflix';
 import { addContact } from 'redux/contactsSlice';
 import { Label, Input, AddBtn } from '../ContactForm/ContactForm.styled';
 
@@ -28,7 +28,7 @@ const ContactForm = () => {
 
     if (checkNameInList) {
       Notiflix.Report.warning(`${name} is already in contacts`);
-      return;
+      return resetForm();;
     }
 
     const contact = { id: nanoid(4), name, number };
